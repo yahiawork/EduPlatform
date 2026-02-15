@@ -4,7 +4,7 @@
 
 <!-- ========================================================= -->
 
-<h1 align="center">🎓 EduPlatform</h1>
+<h1 align="center">EduPlatform</h1>
 
 <p align="center">
 Modern Educational Platform engineered for scalable digital learning
@@ -59,10 +59,6 @@ The platform focuses on:
 
 <img src="assets/screenshots/screenshot3.png" width="45%" style="border-radius:14px; margin:10px;" />
 <img src="assets/screenshots/screenshot4.png" width="45%" style="border-radius:14px; margin:10px;" />
-
-<img src="assets/screenshots/screenshot5.png" width="45%" style="border-radius:14px; margin:10px;" />
-<img src="assets/screenshots/screenshot6.png" width="45%" style="border-radius:14px; margin:10px;" />
-
 </p>
 
 <p align="center">
