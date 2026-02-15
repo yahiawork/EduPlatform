@@ -54,11 +54,10 @@ The platform focuses on:
 
 <p align="center">
 
-<img src="assets/screenshots/screenshot1.png" width="45%" style="border-radius:14px; margin:10px;" />
-<img src="assets/screenshots/screenshot2.png" width="45%" style="border-radius:14px; margin:10px;" />
-
-<img src="assets/screenshots/screenshot3.png" width="45%" style="border-radius:14px; margin:10px;" />
-<img src="assets/screenshots/screenshot4.png" width="45%" style="border-radius:14px; margin:10px;" />
+<img src="assets/images/screenshot1.png" width="45%" style="border-radius:14px; margin:10px;" />
+<img src="assets/images/screenshot2.png" width="45%" style="border-radius:14px; margin:10px;" />
+<img src="assets/images/screenshot3.png" width="45%" style="border-radius:14px; margin:10px;" />
+<img src="assets/images/screenshot4.png" width="45%" style="border-radius:14px; margin:10px;" />
 </p>
 
 <p align="center">
