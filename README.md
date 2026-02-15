@@ -30,10 +30,10 @@ This project aims to simplify digital learning and provide powerful tools for bo
 ---
 
 ### Screenshots
-![Screenshot 1](assets/images/screenshot3.png)
-![Screenshot 2](assets/images/screenshot4.png)
-![Screenshot 3](assets/images/screenshot5.png)
-![Screenshot 4](assets/images/screenshot6.png)
+![Screenshot 1](assets/images/screenshot1.png)
+![Screenshot 2](assets/images/screenshot2.png)
+![Screenshot 3](assets/images/screenshot3.png)
+![Screenshot 4](assets/images/screenshot4.png)
 
 ---
 
