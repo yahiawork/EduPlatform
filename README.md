@@ -205,13 +205,10 @@ app/    → feature modules
 ## 👨‍💻 Author
 
 **Yahia Saad**
-Software Developer
+Full Stack Developer
 
 Portfolio
 https://yahiawork.github.io
-
-GitHub
-https://github.com/yahiawork
 
 ---
 
