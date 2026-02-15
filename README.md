@@ -54,15 +54,23 @@ The platform focuses on:
 
 <p align="center">
 
-<img src="assets/images/screenshot1.png" width="45%" style="border-radius:14px; margin:10px;" />
-<img src="assets/images/screenshot2.png" width="45%" style="border-radius:14px; margin:10px;" />
-<img src="assets/images/screenshot3.png" width="45%" style="border-radius:14px; margin:10px;" />
-<img src="assets/images/screenshot4.png" width="45%" style="border-radius:14px; margin:10px;" />
-</p>
+<img src="assets/images/screenshot1.png"
+width="320"
+style="border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.18); margin:12px;" />
 
-<p align="center">
-Curved responsive preview layout
-</p>
+<img src="assets/images/screenshot2.png"
+width="320"
+style="border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.18); margin:12px;" />
+
+<img src="assets/images/screenshot3.png"
+width="320"
+style="border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.18); margin:12px;" />
+
+<br>
+
+<img src="assets/images/screenshot4.png"
+width="320"
+style="border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.18); margin:12px;" />
 
 ---
 
