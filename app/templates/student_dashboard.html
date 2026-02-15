@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-head">
+  <h1>Student Dashboard</h1>
+  <p class="text-muted">Learn Python with real tests, projects, and teacher feedback.</p>
+</div>
+
+<div class="grid-3">
+  <div class="card-pro">
+    <div class="kpi-title">Tokens</div>
+    <div class="kpi-value">{{ current_user.tokens or 0 }}</div>
+    <div class="text-muted small">Use tokens to unlock hints.</div>
+  </div>
+  <div class="card-pro">
+    <div class="kpi-title">Passed</div>
+    <div class="kpi-value">{{ passed }}</div>
+    <div class="text-muted small">Exercises approved by your teacher.</div>
+  </div>
+  <div class="card-pro">
+    <div class="kpi-title">Progress</div>
+    <div class="kpi-value">{{ progress_pct }}%</div>
+    <div class="progress mt-2" style="height:8px;">
+      <div class="progress-bar" role="progressbar" style="width: {{ progress_pct }}%"></div>
+    </div>
+  </div>
+</div>
+
+<div class="row g-3 mt-2">
+  <div class="col-lg-7">
+    <div class="card-pro">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="mb-0">Your Stats</h5>
+        <span class="badge-soft">Live</span>
+      </div>
+      <canvas id="statsChart" height="120"></canvas>
+    </div>
+  </div>
+  <div class="col-lg-5">
+    <div class="card-pro">
+      <h5>Lessons</h5>
+      {% if lessons %}
+        <ul class="list-clean mt-2">
+          {% for l in lessons %}
+            <li class="item-row">
+              <span class="dot blue"></span>
+              <span class="flex-1">{{ l.title }}</span>
+              <a class="link" href="/student/lesson/{{ l.id }}">Open</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="text-muted">No lessons yet.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

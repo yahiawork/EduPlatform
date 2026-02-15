@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-head">
+  <h1>{{ lesson.title }}</h1>
+  <p class="text-muted">Read the lesson then solve the exercises.</p>
+</div>
+
+<div class="card-pro mb-3">
+  <div class="content">{{ lesson.content }}</div>
+</div>
+
+<div class="card-pro">
+  <h5>Exercises</h5>
+  {% if exercises %}
+    <ul class="list-clean mt-2">
+      {% for ex in exercises %}
+        <li class="item-row">
+          <span class="dot purple"></span>
+          <span class="flex-1">{{ ex.title }}</span>
+          <a class="link" href="/student/exercise/{{ ex.id }}">Start</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="text-muted">No exercises.</p>
+  {% endif %}
+</div>
+{% endblock %}

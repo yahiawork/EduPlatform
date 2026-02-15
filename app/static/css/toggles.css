@@ -1,0 +1,26 @@
+
+.toggle {
+  display: flex;
+  gap: 8px;
+  margin: 6px 0;
+}
+.toggle::before {
+  content: "⚙️";
+}
+.toggle.danger::before {
+  content: "⛔";
+}
+
+/* Phone / small screens */
+@media (max-width: 600px) {
+  .toggle {
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 10px 0;
+    align-items: flex-start;
+  }
+  .toggle::before {
+    flex: 0 0 auto;
+    margin-top: 2px;
+  }
+}

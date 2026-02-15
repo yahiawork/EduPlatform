@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-head">
+  <h1>Chat</h1>
+  <p class="text-muted">Talking with <b>{{ other.username }}</b></p>
+</div>
+
+<div class="card-pro">
+  <div class="chat-box" id="chatBox">
+    {% for m in msgs %}
+      <div class="msg {{ 'me' if m.sender_id == current_user.id else 'them' }}">
+        <div class="bubble">
+          <div class="small text-muted">{{ m.sender.username }}</div>
+          <div>{{ m.text }}</div>
+          <div class="small text-muted mt-1">{{ m.created_at }}</div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <form method="post" class="chat-input mt-2">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input class="form-control form-pro" name="text" placeholder="Type a message..." required>
+    <button class="btn btn-primary btn-pro">Send</button>
+  </form>
+</div>
+{% endblock %}

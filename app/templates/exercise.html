@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-head">
+  <h1>{{ ex.title }}</h1>
+  <p class="text-muted">Submit your solution. If tests pass, your teacher will approve it.</p>
+</div>
+
+<div class="row g-3">
+  <div class="col-lg-5">
+    <div class="card-pro">
+      <h5>Prompt</h5>
+      <div class="content mt-2">{{ ex.prompt }}</div>
+      <div class="mt-3 d-flex gap-2">
+        <form method="post" action="/student/exercise/{{ ex.id }}/hint" class="flex-1">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <button class="btn btn-outline-light btn-pro w-100">Use 1 Token for Hint</button>
+        </form>
+      </div>
+
+      {% if show_hint %}
+      <div class="hint mt-3">
+        <div class="section-title">Hint</div>
+        <div class="content">{{ ex.hint }}</div>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="card-pro mt-3">
+      <h5>Limits</h5>
+      <div class="text-muted small">Speed limit: <b>{{ ex.time_limit_ms }}ms</b> • Reward: <b>{{ ex.token_reward }} tokens</b></div>
+    </div>
+  </div>
+
+  <div class="col-lg-7">
+    <div class="card-pro">
+      <h5>Editor</h5>
+      <form method="post" action="/student/exercise/{{ ex.id }}/submit" class="mt-2">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <textarea class="code-editor" name="code_py" rows="14" spellcheck="false"># Write your solution in solution.py format
+# Example:
+def add(a, b):
+    return a + b
+</textarea>
+        <button class="btn btn-primary btn-pro w-100 mt-2">Submit</button>
+      </form>
+    </div>
+
+    <!-- ✅ Terminal (Run) -->
+    <div class="card-pro mt-3">
+      <h5>Terminal</h5>
+      <div class="text-muted small">Use this to run your code and see the output (supports input()).</div>
+
+      <label class="mt-2 text-muted small">Input (optional):</label>
+      <textarea id="stdin_text" class="code-editor" rows="4" spellcheck="false"
+                style="font-family: monospace;"></textarea>
+
+      <button type="button" id="runBtn" class="btn btn-outline-light btn-pro w-100 mt-2">▶ Run</button>
+
+      <pre id="terminalOut" class="codebox mt-2" style="min-height:120px; white-space:pre-wrap;">Ready.</pre>
+    </div>
+
+    <div class="card-pro mt-3">
+      <div class="d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Last Result</h5>
+        {% if last %}<span class="badge-soft">{{ last.status }}</span>{% else %}<span class="badge-soft">—</span>{% endif %}
+      </div>
+
+      {% if last %}
+        {% if last.status == "WAITING_APPROVAL" %}
+          <div class="alert alert-warning mt-3 mb-0">✅ Tests passed. Waiting for teacher approval.</div>
+        {% elif last.status == "APPROVED" %}
+          <div class="alert alert-success mt-3 mb-0">✅ Approved! Note: {{ last.review_note }}</div>
+        {% elif last.status == "REJECTED" %}
+          <div class="alert alert-danger mt-3 mb-0">❌ Rejected. Note: {{ last.review_note }}</div>
+        {% endif %}
+
+        <div class="mt-3 text-muted small">Runtime: <b>{{ last.runtime_ms }}ms</b></div>
+        <pre class="codebox mt-2">{{ last.output }}</pre>
+      {% else %}
+        <p class="text-muted mt-2 mb-0">No submissions yet.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+  const runBtn = document.getElementById("runBtn");
+  const outEl = document.getElementById("terminalOut");
+
+  runBtn.addEventListener("click", async () => {
+    outEl.textContent = "Running...";
+
+    const code = document.querySelector('textarea[name="code_py"]')?.value || "";
+    const stdinText = document.getElementById("stdin_text")?.value || "";
+
+    const fd = new FormData();
+    fd.append("code_py", code);
+    fd.append("stdin_text", stdinText);
+
+    const csrf = document.querySelector('input[name="csrf_token"]')?.value;
+    if (csrf) fd.append("csrf_token", csrf);
+
+    try {
+      const res = await fetch("{{ url_for('student.run_code', exercise_id=ex.id) }}", {
+        method: "POST",
+        body: fd
+      });
+
+      const data = await res.json();
+
+      const status = data.status || "UNKNOWN";
+      const ms = (data.runtime_ms !== undefined && data.runtime_ms !== null) ? data.runtime_ms : "";
+      const stdout = data.stdout || "";
+      const stderr = data.stderr || "";
+
+      outEl.textContent =
+        `Status: ${status} ${ms ? "(" + ms + "ms)" : ""}\n\n` +
+        (stdout ? `OUTPUT:\n${stdout}\n` : "") +
+        (stderr ? `ERROR:\n${stderr}` : "");
+    } catch (e) {
+      outEl.textContent = "ERROR: " + e;
+    }
+  });
+</script>
+{% endblock %}

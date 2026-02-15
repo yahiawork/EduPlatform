@@ -1,0 +1,22 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=change-me
+      - DATABASE_URL=sqlite:///../instance/app.db
+      - USE_DOCKER_GRADER=1
+      - DOCKER_IMAGE=edu_runner:latest
+    volumes:
+      - ./instance:/app/instance
+    depends_on:
+      - runner_image
+
+  runner_image:
+    build:
+      context: .
+      dockerfile: Dockerfile.runner
+    image: edu_runner:latest

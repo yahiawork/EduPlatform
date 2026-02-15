@@ -1,0 +1,27 @@
+
+<h3>Create Exercise</h3>
+
+<label>Level</label>
+<select name="level">
+  <option>Beginner</option>
+  <option>Intermediate</option>
+  <option>Advanced</option>
+</select>
+
+<h4>Rules</h4>
+
+<div class="toggle"><input type="checkbox" name="require_if"> if</div>
+<div class="toggle"><input type="checkbox" name="require_else"> else</div>
+<div class="toggle"><input type="checkbox" name="allow_elif" checked> elif</div>
+
+<div class="toggle"><input type="checkbox" name="require_for"> for loop</div>
+<div class="toggle"><input type="checkbox" name="require_while"> while loop</div>
+<div class="toggle danger"><input type="checkbox" name="forbid_for"> forbid for</div>
+<div class="toggle danger"><input type="checkbox" name="forbid_while"> forbid while</div>
+
+<div class="toggle"><input type="checkbox" name="require_function"> function</div>
+<input name="function_name" placeholder="Function name">
+
+<div class="toggle"><input type="checkbox" name="require_print"> print()</div>
+<div class="toggle danger"><input type="checkbox" name="forbid_print"> no print()</div>
+<div class="toggle"><input type="checkbox" name="require_input"> input()</div>

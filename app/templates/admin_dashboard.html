@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-head">
+  <h1>Admin Dashboard</h1>
+  <p class="text-muted">Manage teachers and course content.</p>
+</div>
+
+<div class="grid-3">
+  <div class="card-pro">
+    <div class="kpi-title">Teachers</div>
+    <div class="kpi-value" id="kpiTeachers">—</div>
+  </div>
+  <div class="card-pro">
+    <div class="kpi-title">Students</div>
+    <div class="kpi-value" id="kpiStudents">—</div>
+  </div>
+  <div class="card-pro">
+    <div class="kpi-title">Submissions</div>
+    <div class="kpi-value" id="kpiSubs">—</div>
+  </div>
+</div>
+
+<div class="row g-3 mt-2">
+  <div class="col-lg-7">
+    <div class="card-pro">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <h5 class="mb-0">Platform Stats</h5>
+        <span class="badge-soft">Live</span>
+      </div>
+      <canvas id="statsChart" height="120"></canvas>
+    </div>
+  </div>
+
+  <div class="col-lg-5">
+    <div class="card-pro">
+      <h5>Create Teacher</h5>
+      <form method="post" action="/admin/create-teacher" class="mt-3">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input class="form-control form-pro mb-2" name="username" placeholder="Teacher username" required>
+        <input class="form-control form-pro mb-3" name="password" placeholder="Password" type="password" required>
+        <button class="btn btn-primary btn-pro w-100">Create</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="row g-3 mt-1">
+  <div class="col-lg-6">
+    <div class="card-pro">
+      <h5>Create Lesson</h5>
+      <form method="post" action="/admin/create-lesson" class="mt-3">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input class="form-control form-pro mb-2" name="title" placeholder="Lesson title" required>
+        <textarea class="form-control form-pro mb-2" name="content" rows="5" placeholder="Lesson content..." required></textarea>
+        <div class="d-flex gap-2">
+          <input class="form-control form-pro" name="order" type="number" value="1" min="1">
+          <button class="btn btn-outline-light btn-pro flex-1">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="card-pro">
+      <h5>Create Exercise</h5>
+      <form method="post" action="/admin/create-exercise" class="mt-3">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <select class="form-select form-pro mb-2" name="lesson_id" required>
+          <option value="">Select lesson</option>
+          {% for l in lessons %}
+            <option value="{{ l.id }}">{{ l.title }}</option>
+          {% endfor %}
+        </select>
+        <input class="form-control form-pro mb-2" name="title" placeholder="Exercise title" required>
+        <textarea class="form-control form-pro mb-2" name="prompt" rows="3" placeholder="Prompt..." required></textarea>
+        <textarea class="form-control form-pro mb-2" name="tests_py" rows="5" placeholder="pytest tests (test_solution.py)..." required></textarea>
+        <textarea class="form-control form-pro mb-2" name="hint" rows="2" placeholder="Hint (optional)"></textarea>
+
+        <div class="row g-2">
+          <div class="col-6">
+            <select class="form-select form-pro" name="level">
+              <option>Beginner</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+            </select>
+          </div>
+          <div class="col-6"></div>
+        </div>
+
+        <details class="mt-2">
+          <summary class="link">Code Rules (optional)</summary>
+          <div class="mt-2">
+            <div class="d-flex flex-wrap gap-3">
+              <label class="small"><input type="checkbox" name="require_if"> require <code>if</code></label>
+              <label class="small"><input type="checkbox" name="require_else"> require <code>else</code></label>
+              <label class="small"><input type="checkbox" name="allow_elif" checked> allow <code>elif</code></label>
+            </div>
+
+            <div class="d-flex flex-wrap gap-3 mt-2">
+              <label class="small"><input type="checkbox" name="require_for"> require <code>for</code></label>
+              <label class="small"><input type="checkbox" name="require_while"> require <code>while</code></label>
+              <label class="small"><input type="checkbox" name="forbid_for"> forbid <code>for</code></label>
+              <label class="small"><input type="checkbox" name="forbid_while"> forbid <code>while</code></label>
+            </div>
+
+            <div class="d-flex flex-wrap gap-3 mt-2">
+              <label class="small"><input type="checkbox" name="require_function"> require function</label>
+              <input class="form-control form-pro" style="max-width:240px" name="function_name" placeholder="Function name (optional)">
+            </div>
+
+            <div class="d-flex flex-wrap gap-3 mt-2">
+              <label class="small"><input type="checkbox" name="require_print"> require <code>print()</code></label>
+              <label class="small"><input type="checkbox" name="forbid_print"> forbid <code>print()</code></label>
+              <label class="small"><input type="checkbox" name="require_input"> require <code>input()</code></label>
+            </div>
+          </div>
+        </details>
+
+        <div class="row g-2">
+          <div class="col-4"><input class="form-control form-pro" name="order" type="number" value="1" min="1"></div>
+          <div class="col-4"><input class="form-control form-pro" name="time_limit_ms" type="number" value="400" min="10"></div>
+          <div class="col-4"><input class="form-control form-pro" name="token_reward" type="number" value="1" min="0"></div>
+        </div>
+        <button class="btn btn-outline-light btn-pro w-100 mt-2">Create Exercise</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="card-pro mt-3">
+  <h5>Teachers</h5>
+  {% if teachers %}
+    <ul class="list-clean mt-2">
+      {% for t in teachers %}
+        <li class="item-row">
+          <span class="dot"></span>
+          <span class="flex-1">{{ t.username }}</span>
+          <span class="badge-soft">active: {{ "yes" if t.is_active_paid else "no" }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="text-muted">No teachers yet.</p>
+  {% endif %}
+</div>
+{% endblock %}

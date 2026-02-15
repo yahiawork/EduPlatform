@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-head">
+  <h1>Search</h1>
+  <p class="text-muted">Results for <b>"{{ q }}"</b></p>
+</div>
+
+<div class="row g-3">
+  <div class="col-lg-4">
+    <div class="card-pro">
+      <h5 class="mb-3">Users</h5>
+      {% if users %}
+        <ul class="list-clean">
+          {% for u in users %}
+            <li class="item-row">
+              <span class="dot"></span>
+              <span class="flex-1">{{ u.username }}</span>
+              <span class="badge-soft">{{ u.role }}</span>
+              {% if current_user.role in ["admin","teacher","student"] and u.role in ["teacher","student"] and u.id != current_user.id %}
+                <a class="link" href="/chat/with/{{ u.id }}">Chat</a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="text-muted">No matches.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="card-pro">
+      <h5 class="mb-3">Lessons</h5>
+      {% if lessons %}
+        <ul class="list-clean">
+          {% for l in lessons %}
+            <li class="item-row">
+              <span class="dot blue"></span>
+              <span class="flex-1">{{ l.title }}</span>
+              {% if current_user.role == "student" %}
+                <a class="link" href="/student/lesson/{{ l.id }}">Open</a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="text-muted">No matches.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="card-pro">
+      <h5 class="mb-3">Exercises</h5>
+      {% if exercises %}
+        <ul class="list-clean">
+          {% for e in exercises %}
+            <li class="item-row">
+              <span class="dot purple"></span>
+              <span class="flex-1">{{ e.title }}</span>
+              {% if current_user.role == "student" %}
+                <a class="link" href="/student/exercise/{{ e.id }}">Try</a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="text-muted">No matches.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

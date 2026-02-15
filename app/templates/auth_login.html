@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth-wrap">
+  <div class="auth-card card-pro">
+    <h2 class="mb-1">Welcome back</h2>
+    <p class="text-muted mb-4">Sign in to continue.</p>
+    <form method="post" action="/login">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input class="form-control form-pro" name="username" autocomplete="username" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input class="form-control form-pro" name="password" type="password" autocomplete="current-password" required>
+      </div>
+      <button class="btn btn-primary w-100 btn-pro">Login</button>
+    </form>
+    <div class="mt-3 small text-muted">
+      Demo admin: <b>admin</b> / <b>admin123</b>
+    </div>
+  </div>
+</div>
+{% endblock %}
