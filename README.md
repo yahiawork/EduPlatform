@@ -131,6 +131,35 @@ python run.py
 http://127.0.0.1:5000
 
 ---
+---
+
+## Environment Configuration (Required)
+
+Before running the platform, you must create a `.env` file in the project root.
+
+This file is required to configure SMTP settings for email functionality.
+
+You must manually provide your own email server credentials.
+
+Steps:
+
+1. Copy `.env.example`
+2. Rename it to `.env`
+3. Replace SMTP values with your real credentials
+
+Example:
+
+cp .env.example .env
+
+Without configuring SMTP variables, email-related features will not work.
+
+Important:
+
+- Never commit your `.env` file to version control
+- Keep credentials private
+- Always use environment variables in production
+
+---
 
 ## System Architecture (Conceptual)
 
