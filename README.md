@@ -1,108 +1,149 @@
+```{=html}
 <!-- ========================================================= -->
-
+```
+```{=html}
 <!-- ===================== PROJECT BANNER ==================== -->
-
+```
+```{=html}
 <!-- ========================================================= -->
-
-<h1 align="center">EduPlatform</h1>
-
+```
+```{=html}
+<h1 align="center">
+```
+EduPlatform
+```{=html}
+</h1>
+```
+```{=html}
 <p align="center">
+```
 Modern Educational Platform engineered for scalable digital learning
+```{=html}
 </p>
-
+```
+```{=html}
 <p align="center">
-Built with ❤️ by <b>Yahia Saad</b>
+```
+Built by `<b>`{=html}Yahia Saad`</b>`{=html}
+```{=html}
 </p>
-
+```
+```{=html}
 <p align="center">
-<a href="https://github.com/yahiawork/EduPlatform/stargazers"><img src="https://img.shields.io/github/stars/yahiawork/EduPlatform?style=for-the-badge"></a>
-<a href="https://github.com/yahiawork/EduPlatform/network/members"><img src="https://img.shields.io/github/forks/yahiawork/EduPlatform?style=for-the-badge"></a>
-<a href="https://github.com/yahiawork/EduPlatform/issues"><img src="https://img.shields.io/github/issues/yahiawork/EduPlatform?style=for-the-badge"></a>
-<img src="https://img.shields.io/badge/Python-Backend-blue?style=for-the-badge">
-<img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge">
-<img src="https://img.shields.io/badge/License-MIT-orange?style=for-the-badge">
+```
+`<a href="https://github.com/yahiawork/EduPlatform/stargazers">`{=html}`<img src="https://img.shields.io/github/stars/yahiawork/EduPlatform?style=for-the-badge">`{=html}`</a>`{=html}
+`<a href="https://github.com/yahiawork/EduPlatform/network/members">`{=html}`<img src="https://img.shields.io/github/forks/yahiawork/EduPlatform?style=for-the-badge">`{=html}`</a>`{=html}
+`<a href="https://github.com/yahiawork/EduPlatform/issues">`{=html}`<img src="https://img.shields.io/github/issues/yahiawork/EduPlatform?style=for-the-badge">`{=html}`</a>`{=html}
+`<img src="https://img.shields.io/badge/Python-Backend-blue?style=for-the-badge">`{=html}
+`<img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge">`{=html}
+`<img src="https://img.shields.io/badge/License-MIT-orange?style=for-the-badge">`{=html}
+```{=html}
 </p>
+```
 
----
+------------------------------------------------------------------------
 
-## 📌 Overview
+## Overview
 
-EduPlatform is a structured and scalable web-based educational system designed to deliver an organized digital learning experience.
+EduPlatform is a structured and scalable web-based educational system
+designed to deliver an organized digital learning experience.
 
 The platform focuses on:
 
-* Clean system architecture
-* Scalable backend design
-* Efficient local deployment
-* Structured learning workflows
-* Modular development
+-   Clean system architecture
+-   Scalable backend design
+-   Efficient local deployment
+-   Structured learning workflows
+-   Modular development
 
----
+------------------------------------------------------------------------
 
-## ✨ Core Features
+## Core Features
 
-✔ Modular backend architecture
-✔ Database seeding system
-✔ Structured application layout
-✔ Fast local deployment
-✔ Scalable project design
+✔ Modular backend architecture\
+✔ Database seeding system\
+✔ Structured application layout\
+✔ Fast local deployment\
+✔ Scalable project design\
 ✔ Clean development workflow
 
----
+------------------------------------------------------------------------
 
-## 🖼 Application Screenshots
+## Application Screenshots
 
+```{=html}
 <p align="center">
-
-<img src="assets/images/screenshot1.png"
-width="320"
-style="border-radius:1000px; box-shadow:0 6px 18px rgba(0,0,0,0.18); margin:2px;" />
-
-<img src="assets/images/screenshot2.png"
-width="320"
-style="border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.18); margin:12px;" />
-
-<img src="assets/images/screenshot3.png"
-width="320"
-style="border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.18); margin:12px;" />
-
-<br>
-
-<img src="assets/images/screenshot4.png"
-width="320"
-style="border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.18); margin:12px;" />
-
----
-
-## 🧱 Project Structure
-
 ```
-EduPlatform/
-│
-├── app/                # Core application modules
-├── instance/           # Database / runtime configuration
-├── requirements.txt    # Dependencies
-├── run.py              # Main entry point
-├── seed.py             # Database initialization
-└── README.md
-```
+`<img src="assets/images/screenshot1.png"
+width="320"
+style="border-radius:1000px; box-shadow:0 6px 18px rgba(0,0,0,0.18); margin:2px;" />`{=html}
 
----
+`<img src="assets/images/screenshot2.png"
+width="320"
+style="border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.18); margin:12px;" />`{=html}
 
-## 🚀 Quick Start
+`<img src="assets/images/screenshot3.png"
+width="320"
+style="border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.18); margin:12px;" />`{=html}
 
-### 1️⃣ Clone repository
+`<br>`{=html}
 
-```bash
+`<img src="assets/images/screenshot4.png"
+width="320"
+style="border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.18); margin:12px;" />`{=html}
+
+------------------------------------------------------------------------
+
+## Project Structure
+
+    EduPlatform/
+    │
+    ├── app/                # Core application modules
+    ├── instance/           # Database / runtime configuration
+    ├── requirements.txt    # Dependencies
+    ├── run.py              # Main entry point
+    ├── seed.py             # Database initialization
+    └── README.md
+
+------------------------------------------------------------------------
+
+## Environment Configuration (Required)
+
+Before running the platform, you must create a `.env` file in the
+project root and configure SMTP settings for email functionality.
+
+Example:
+
+    SMTP_SERVER=smtp.gmail.com
+    SMTP_PORT=587
+    SMTP_USERNAME=your_email@example.com
+    SMTP_PASSWORD=your_password
+    SMTP_USE_TLS=True
+    SMTP_SENDER=your_email@example.com
+
+Without these variables, email-related features will not work.
+
+Important:
+
+-   Do not commit your `.env` file to version control.
+-   Add `.env` to `.gitignore`.
+
+------------------------------------------------------------------------
+
+## Quick Start
+
+### 1. Clone repository
+
+``` bash
 git clone https://github.com/yahiawork/EduPlatform.git
 cd EduPlatform
 ```
 
----
+------------------------------------------------------------------------
 
-### 2️⃣ Create virtual environment
+### 2. Create virtual environment
 
-```bash
+``` bash
 python -m venv venv
 ```
 
@@ -110,120 +151,118 @@ Activate:
 
 Windows
 
-```bash
+``` bash
 venv\Scripts\activate
 ```
 
 Linux / macOS
 
-```bash
+``` bash
 source venv/bin/activate
 ```
 
----
+------------------------------------------------------------------------
 
-### 3️⃣ Install dependencies
+### 3. Install dependencies
 
-```bash
+``` bash
 pip install -r requirements.txt
 ```
 
----
+------------------------------------------------------------------------
 
-### 4️⃣ Initialize database (optional but recommended)
+### 4. Initialize database (optional but recommended)
 
-```bash
+``` bash
 python seed.py
 ```
 
----
+------------------------------------------------------------------------
 
-### 5️⃣ Run server
+### 5. Run server
 
-```bash
+``` bash
 python run.py
 ```
 
----
+------------------------------------------------------------------------
 
-### 6️⃣ Open in browser
+### 6. Open in browser
 
-```
-http://127.0.0.1:5000
-```
+    http://127.0.0.1:5000
 
----
+------------------------------------------------------------------------
 
-## 🏗 System Architecture (Conceptual)
+## System Architecture (Conceptual)
 
-```
-Client Browser
-      │
-      ▼
-Application Server (run.py)
-      │
-      ▼
-App Modules (app/)
-      │
-      ▼
-Database Instance (instance/)
-```
+    Client Browser
+          │
+          ▼
+    Application Server (run.py)
+          │
+          ▼
+    App Modules (app/)
+          │
+          ▼
+    Database Instance (instance/)
 
----
+------------------------------------------------------------------------
 
-## 🧪 Development Workflow
+## Development Workflow
 
-```
-seed.py → prepare database
-run.py  → start server
-app/    → feature modules
-```
+    seed.py → prepare database
+    run.py  → start server
+    app/    → feature modules
 
----
+------------------------------------------------------------------------
 
-## 📈 Roadmap
+## Roadmap
 
-* Authentication system
-* Admin dashboard
-* Course enrollment logic
-* REST API expansion
-* Real-time features
-* Production deployment config
+-   Authentication system
+-   Admin dashboard
+-   Course enrollment logic
+-   REST API expansion
+-   Real-time features
+-   Production deployment config
 
----
+------------------------------------------------------------------------
 
-## 🤝 Contributing
+## Contributing
 
-1. Fork repository
-2. Create feature branch
-3. Commit changes
-4. Push branch
-5. Open pull request
+1.  Fork repository
+2.  Create feature branch
+3.  Commit changes
+4.  Push branch
+5.  Open pull request
 
----
+------------------------------------------------------------------------
 
-## 👨‍💻 Author
+## Author
 
-**Yahia Saad**
+Yahia Saad\
 Full Stack Developer
 
-Portfolio
+Portfolio\
 https://yahiawork.github.io
 
----
+------------------------------------------------------------------------
 
-## ⭐ Support
+## Support
 
-If you like this project, consider giving it a star ⭐
+If you like this project, consider giving it a star.
 
----
+------------------------------------------------------------------------
 
-## 📄 License
+## License
 
 MIT License
 
----
+------------------------------------------------------------------------
 
+```{=html}
 <p align="center">
-Built with precision engineering 🧠
+```
+Built with precision engineering
+```{=html}
 </p>
+```
