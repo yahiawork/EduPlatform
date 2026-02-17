@@ -72,7 +72,9 @@ style="border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.18); margin:12px;"
 
 ---
 
-## Project Structure
+<!-- ========================================================= -->
+<!-- ==================== PROJECT STRUCTURE ================== -->
+<!-- ========================================================= -->
 
 EduPlatform/
 │
@@ -85,16 +87,18 @@ EduPlatform/
 
 ---
 
-## Quick Start
+<!-- ========================================================= -->
+<!-- ======================= QUICK START ===================== -->
+<!-- ========================================================= -->
 
-### 1 Clone repository
+1 Clone repository
 
 git clone https://github.com/yahiawork/EduPlatform.git  
 cd EduPlatform
 
 ---
 
-### 2 Create virtual environment
+2 Create virtual environment
 
 python -m venv venv
 
@@ -108,32 +112,33 @@ source venv/bin/activate
 
 ---
 
-### 3 Install dependencies
+3 Install dependencies
 
 pip install -r requirements.txt
 
 ---
 
-### 4 Initialize database (optional but recommended)
+4 Initialize database (optional but recommended)
 
 python seed.py
 
 ---
 
-### 5 Run server
+5 Run server
 
 python run.py
 
 ---
 
-### 6 Open in browser
+6 Open in browser
 
 http://127.0.0.1:5000
 
 ---
----
 
-## Environment Configuration (Required)
+<!-- ========================================================= -->
+<!-- ================= ENVIRONMENT CONFIGURATION ============= -->
+<!-- ========================================================= -->
 
 Before running the platform, you must create a `.env` file in the project root.
 
@@ -161,7 +166,9 @@ Important:
 
 ---
 
-## System Architecture (Conceptual)
+<!-- ========================================================= -->
+<!-- ===================== SYSTEM ARCHITECTURE =============== -->
+<!-- ========================================================= -->
 
 Client Browser  
       │  
@@ -176,7 +183,9 @@ Database Instance (instance/)
 
 ---
 
-## Development Workflow
+<!-- ========================================================= -->
+<!-- =================== DEVELOPMENT WORKFLOW ================= -->
+<!-- ========================================================= -->
 
 seed.py → prepare database  
 run.py  → start server  
@@ -184,7 +193,9 @@ app/    → feature modules
 
 ---
 
-## Roadmap
+<!-- ========================================================= -->
+<!-- ========================= ROADMAP ======================= -->
+<!-- ========================================================= -->
 
 * Authentication system
 * Admin dashboard
@@ -195,7 +206,9 @@ app/    → feature modules
 
 ---
 
-## Contributing
+<!-- ========================================================= -->
+<!-- ======================= CONTRIBUTING ==================== -->
+<!-- ========================================================= -->
 
 1. Fork repository
 2. Create feature branch
@@ -205,7 +218,9 @@ app/    → feature modules
 
 ---
 
-## Author
+<!-- ========================================================= -->
+<!-- ========================== AUTHOR ======================= -->
+<!-- ========================================================= -->
 
 Yahia Saad  
 Full Stack Developer
@@ -215,13 +230,17 @@ https://yahiawork.github.io
 
 ---
 
-## Support
+<!-- ========================================================= -->
+<!-- ========================== SUPPORT ====================== -->
+<!-- ========================================================= -->
 
 If you like this project, consider giving it a star
 
 ---
 
-## License
+<!-- ========================================================= -->
+<!-- ========================== LICENSE ====================== -->
+<!-- ========================================================= -->
 
 MIT License
 
