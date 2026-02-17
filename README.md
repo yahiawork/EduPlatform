@@ -92,48 +92,50 @@ EduPlatform/
 <!-- ========================================================= -->
 
 1 Clone repository
-
+```
 git clone https://github.com/yahiawork/EduPlatform.git  
 cd EduPlatform
-
+```
 ---
 
 2 Create virtual environment
-
+```
 python -m venv venv
-
+```
 Activate:
 
 Windows  
+```
 venv\Scripts\activate
-
+```
 Linux / macOS  
+```
 source venv/bin/activate
-
+```
 ---
 
 3 Install dependencies
-
+```
 pip install -r requirements.txt
-
+```
 ---
 
 4 Initialize database (optional but recommended)
-
+```
 python seed.py
-
+```
 ---
 
 5 Run server
-
+```
 python run.py
-
+```
 ---
 
 6 Open in browser
-
+```
 http://127.0.0.1:5000
-
+```
 ---
 
 <!-- ========================================================= -->
@@ -153,9 +155,9 @@ Steps:
 3. Replace SMTP values with your real credentials
 
 Example:
-
+```
 cp .env.example .env
-
+```
 Without configuring SMTP variables, email-related features will not work.
 
 Important:
@@ -226,8 +228,9 @@ Yahia Saad
 Full Stack Developer
 
 Portfolio  
+```
 https://yahiawork.github.io
-
+```
 ---
 
 <!-- ========================================================= -->
