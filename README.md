@@ -56,7 +56,7 @@ The platform focuses on:
 
 <img src="assets/images/screenshot1.png"
 width="320"
-style="border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.18); margin:12px;" />
+style="border-radius:1000px; box-shadow:0 6px 18px rgba(0,0,0,0.18); margin:2px;" />
 
 <img src="assets/images/screenshot2.png"
 width="320"
